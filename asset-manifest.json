@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AtlasBadmintonSC_React/static/css/main.e34aa366.css",
+    "main.js": "/AtlasBadmintonSC_React/static/js/main.01a2e2b5.js",
+    "index.html": "/AtlasBadmintonSC_React/index.html",
+    "main.e34aa366.css.map": "/AtlasBadmintonSC_React/static/css/main.e34aa366.css.map",
+    "main.01a2e2b5.js.map": "/AtlasBadmintonSC_React/static/js/main.01a2e2b5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e34aa366.css",
+    "static/js/main.01a2e2b5.js"
+  ]
+}
