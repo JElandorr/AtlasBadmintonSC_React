@@ -7,8 +7,7 @@ const ContactUs = () => {
         <>
             <section className={ComponentsCSS["location"]}>
                 <iframe
-                    title="contact-form-iframe"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4286.192879355176!2d25.61700353609333!3d42.438055893941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a869c75fcba4f1%3A0x3ca8029b00b3f157!2z0JHQsNC00LzQuNC90YLQvtC9INC_0LvQvtGJ0LDQtNC60LA!5e0!3m2!1sbg!2sbg!4v1676570457822!5m2!1sbg!2sbg"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944.4992574468383!2d25.61498481537941!3d42.43839237918175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a869c75fcba4f1%3A0x3ca8029b00b3f157!2z0JHQsNC00LzQuNC90YLQvtC9INC_0LvQvtGJ0LDQtNC60LA!5e0!3m2!1sbg!2sbg!4v1676614338474!5m2!1sbg!2sbg"
                     width="600"
                     height="450"
                     allowFullScreen=""

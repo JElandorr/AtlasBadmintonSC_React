@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "./Header/Header";
 import SubHeader from "./SubHeader/SubHeader";
@@ -19,68 +19,50 @@ const Main = () => {
     let [currentPage, setCurrentPage] = useState("");
     let [subPageData, setSubPageData] = useState({});
 
+    let flagIsHome = false;
+    let flagIsCourses = false;
+    let flagIsBlog = false;
+    let flagIsAbout = false;
+    let flagIsContact = false;
+
     const subpage = {
-        about: "About Us",
-        blog: "News, Events and Competitions",
-        contact: "Contact Us",
         courses: "Our Courses",
+        blog: "News, Events and Competitions",
+        about: "About Us",
+        contact: "Contact Us",
     };
 
     function subpageHandler(current) {
-        console.log(current, " is clicked!");
-
         setCurrentPage(current);
         setSubPageData({ name: current.toLowerCase(), inscr: subpage[current.toLowerCase()] });
         subPageData.inscr = subPageData[current];
     }
 
-    console.log("subPageData", subPageData);
+    if (currentPage === "HOME") {
+        flagIsHome = true;
+    }
+    if (currentPage === "COURSES") {
+        flagIsCourses = true;
+    }
+    if (currentPage === "BLOG") {
+        flagIsBlog = true;
+    }
+    if (currentPage === "ABOUT") {
+        flagIsAbout = true;
+    }
+    if (currentPage === "CONTACT") {
+        flagIsContact = true;
+    }
 
-    switch (currentPage) {
-        case "COURSES":
-            return (
-                <>
-                    <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
-                    <Courses />
-                    <Campus />
-                    <Facilities />
-                    <Testimonials />
-                    <CallToAction subpageHandler={subpageHandler} />
-                    <Footer />
-                </>
-            );
+    useEffect(() => {
+        if (!currentPage) {
+            setCurrentPage("HOME");
+        }
+    }, []);
 
-        case "BLOG":
-            return (
-                <>
-                    <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
-
-                    <Blog />
-                    <Footer />
-                </>
-            );
-
-        case "ABOUT":
-            return (
-                <>
-                    <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
-
-                    <About />
-                    <Footer />
-                </>
-            );
-
-        case "CONTACT":
-            return (
-                <>
-                    <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
-
-                    <ContactUs />
-                    <Footer />
-                </>
-            );
-        default:
-            return (
+    return (
+        <>
+            {flagIsHome && (
                 <>
                     <Header subpageHandler={subpageHandler} />
                     <Courses />
@@ -90,8 +72,43 @@ const Main = () => {
                     <CallToAction subpageHandler={subpageHandler} />
                     <Footer />
                 </>
-            );
-    }
+            )}
+            {flagIsCourses && (
+                <>
+                    <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
+                    <Courses />
+                    <Campus />
+                    <Facilities />
+                    <Testimonials />
+                    <CallToAction subpageHandler={subpageHandler} />
+                    <Footer />
+                </>
+            )}
+            {flagIsBlog && (
+                <>
+                    <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
+                    <Blog />
+                    <Footer />
+                </>
+            )}
+            {flagIsAbout && (
+                <>
+                    <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
+
+                    <About />
+                    <Footer />
+                </>
+            )}
+            {flagIsContact && (
+                <>
+                    <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
+
+                    <ContactUs />
+                    <Footer />
+                </>
+            )}
+        </>
+    );
 };
 
 export default Main;

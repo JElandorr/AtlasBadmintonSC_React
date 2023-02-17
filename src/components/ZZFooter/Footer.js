@@ -17,22 +17,26 @@ const Footer = () => {
                 </p>
                 <div className={FooterCSS["icons"]}>
                     <div>
-                        <a href="https://www.facebook.com/profile.php?id=100089348267985" target={"_blank"}>
+                        <a
+                            href="https://www.facebook.com/profile.php?id=100089348267985"
+                            target={"_blank"}
+                            rel="noreferrer"
+                        >
                             <FontAwesomeIcon icon={faFacebook} />
                         </a>
                     </div>
                     <div>
-                        <a href="https://twitter.com/Atlas_BdmntnSC" target={"_blank"}>
+                        <a href="https://twitter.com/Atlas_BdmntnSC" target={"_blank"} rel="noreferrer">
                             <FontAwesomeIcon icon={faTwitter} />
                         </a>
                     </div>
                     <div>
-                        <a href="https://www.instagram.com/atlas_bdmntn_sc/" target={"_blank"}>
+                        <a href="https://www.instagram.com/atlas_bdmntn_sc/" target={"_blank"} rel="noreferrer">
                             <FontAwesomeIcon icon={faInstagram} />
                         </a>
                     </div>
                     <div>
-                        <a href="https://www.linkedin.com" target={"_blank"}>
+                        <a href="https://www.linkedin.com" target={"_blank"} rel="noreferrer">
                             <FontAwesomeIcon icon={faLinkedin} />
                         </a>
                     </div>

@@ -26,7 +26,7 @@ const Campus = () => {
                     <div className={ComponentsCSS["campus-col"]}>
                         <img
                             src="https://handluggageonly.co.uk/wp-content/uploads/2016/02/HandLuggageOnly-26.jpg"
-                            alt="London.png"
+                            alt="NewYork.png"
                         ></img>
                         <div className={ComponentsCSS["layer"]}>
                             <h3>NEW YORK</h3>
@@ -34,8 +34,8 @@ const Campus = () => {
                     </div>
                     <div className={ComponentsCSS["campus-col"]}>
                         <img
-                            src="https://ber.berlin-airport.de/en/news/2022-11-03-washington/_jcr_content/root/stagecontent/portrait.coreimg.jpeg/1667379904632/2022-11-01-washington-header-hoch.jpeg"
-                            alt="London.png"
+                            src="https://cdn.vox-cdn.com/thumbor/vNyBfJoRgT95kuNXLPI7lQ9Ag_g=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19123950/GettyImages_975466978.jpg"
+                            alt="Washington.png"
                         ></img>
                         <div className={ComponentsCSS["layer"]}>
                             <h3>WASHINGTON</h3>
