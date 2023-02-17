@@ -60,8 +60,11 @@ const Header = ({ subpageHandler }) => {
                     </div>
                 </nav>
 
-                {!mission && <Welcome handleMissionStatement={handleMissionStatement} />}
-                {mission && <Mission handleMissionStatement={handleMissionStatement} />}
+                {!mission ? (
+                    <Welcome handleMissionStatement={handleMissionStatement} />
+                ) : (
+                    <Mission handleMissionStatement={handleMissionStatement} />
+                )}
             </section>
         </>
     );
