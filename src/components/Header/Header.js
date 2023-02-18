@@ -7,6 +7,7 @@ import Welcome from "./Welcome";
 
 const Header = ({ subpageHandler }) => {
     let [mission, setMission] = useState(null);
+    let [menuOpen, setMenuOpen] = useState(false);
 
     // console.log("mission:", mission);
 
@@ -21,6 +22,14 @@ const Header = ({ subpageHandler }) => {
         }
     }
 
+    function mobileMenuHandler() {
+        if (menuOpen) {
+            setMenuOpen(false);
+        } else {
+            setMenuOpen(true);
+        }
+    }
+
     return (
         <>
             <section className={ComponentsCSS["header"]}>
@@ -29,7 +38,16 @@ const Header = ({ subpageHandler }) => {
                         <img src="https://cdn-icons-png.flaticon.com/512/8952/8952532.png" alt="logo" />
                         <p>Atlas Badminton SC - Stara Zagora</p>
                     </div>
-                    <div id="navLinks" className={ComponentsCSS["nav-links"]}>
+
+                    <div
+                        id="navLinks"
+                        className={ComponentsCSS["nav-links"]}
+                        style={{
+                            right: menuOpen ? "0" : "-250",
+                            display: menuOpen ? "block" : "none",
+                        }}
+                        onClick={mobileMenuHandler}
+                    >
                         <i className={`${ComponentsCSS["mobile-only"]} fa fa-times`}></i>
                         <ul>
                             <li>
@@ -55,7 +73,7 @@ const Header = ({ subpageHandler }) => {
                             </li>
                         </ul>
                     </div>
-                    <div className={ComponentsCSS["mobile-menu-btn"]}>
+                    <div onClick={mobileMenuHandler} style={{ display: menuOpen ? "none" : "block" }}>
                         <i className={`${ComponentsCSS["mobile-only"]} fa fa-bars`}></i>
                     </div>
                 </nav>

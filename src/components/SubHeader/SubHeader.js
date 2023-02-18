@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import ComponentsCSS from "../Components.module.css";
 
 const SubHeader = ({ subpageHandler, subPageData }) => {
+    let [menuOpen, setMenuOpen] = useState(false);
+
     if (subPageData.name === "courses") {
         subPageData.name = "shcourses";
     }
@@ -19,6 +21,14 @@ const SubHeader = ({ subpageHandler, subPageData }) => {
 
     // console.log("sectionClassName", sectionClassName);
 
+    function mobileMenuHandler() {
+        if (menuOpen) {
+            setMenuOpen(false);
+        } else {
+            setMenuOpen(true);
+        }
+    }
+
     return (
         <section className={sectionClassName}>
             <nav>
@@ -33,7 +43,15 @@ const SubHeader = ({ subpageHandler, subPageData }) => {
                         <p>Atlas Badminton SC - Stara Zagora</p>
                     </div>
                 </div>
-                <div className={ComponentsCSS["nav-links"]} id="navLinks">
+                <div
+                    id="navLinks"
+                    className={ComponentsCSS["nav-links"]}
+                    style={{
+                        right: menuOpen ? "0" : "-250",
+                        display: menuOpen ? "block" : "none",
+                    }}
+                    onClick={mobileMenuHandler}
+                >
                     <i className={`${ComponentsCSS["mobile-only"]} "fa fa-times"`}></i>
                     <ul>
                         <li>
@@ -59,7 +77,9 @@ const SubHeader = ({ subpageHandler, subPageData }) => {
                         </li>
                     </ul>
                 </div>
-                <i className={`${ComponentsCSS["mobile-only"]} "fa fa-bars"`}></i>
+                <div onClick={mobileMenuHandler} style={{ display: menuOpen ? "none" : "block" }}>
+                    <i className={`${ComponentsCSS["mobile-only"]} fa fa-bars`}></i>
+                </div>
             </nav>
             <h1>{subPageData.inscr}</h1>
         </section>

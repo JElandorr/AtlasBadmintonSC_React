@@ -19,12 +19,6 @@ const Main = () => {
     let [currentPage, setCurrentPage] = useState("");
     let [subPageData, setSubPageData] = useState({});
 
-    let flagIsHome = false;
-    let flagIsCourses = false;
-    let flagIsBlog = false;
-    let flagIsAbout = false;
-    let flagIsContact = false;
-
     const subpage = {
         courses: "Our Courses",
         blog: "News, Events and Competitions",
@@ -38,22 +32,6 @@ const Main = () => {
         subPageData.inscr = subPageData[current];
     }
 
-    if (currentPage === "HOME") {
-        flagIsHome = true;
-    }
-    if (currentPage === "COURSES") {
-        flagIsCourses = true;
-    }
-    if (currentPage === "BLOG") {
-        flagIsBlog = true;
-    }
-    if (currentPage === "ABOUT") {
-        flagIsAbout = true;
-    }
-    if (currentPage === "CONTACT") {
-        flagIsContact = true;
-    }
-
     useEffect(() => {
         if (!currentPage) {
             setCurrentPage("HOME");
@@ -62,7 +40,7 @@ const Main = () => {
 
     return (
         <>
-            {flagIsHome && (
+            {currentPage === "HOME" && (
                 <>
                     <Header subpageHandler={subpageHandler} />
                     <Courses />
@@ -73,7 +51,7 @@ const Main = () => {
                     <Footer />
                 </>
             )}
-            {flagIsCourses && (
+            {currentPage === "COURSES" && (
                 <>
                     <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
                     <Courses />
@@ -84,14 +62,14 @@ const Main = () => {
                     <Footer />
                 </>
             )}
-            {flagIsBlog && (
+            {currentPage === "BLOG" && (
                 <>
                     <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
                     <Blog />
                     <Footer />
                 </>
             )}
-            {flagIsAbout && (
+            {currentPage === "ABOUT" && (
                 <>
                     <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
 
@@ -99,10 +77,9 @@ const Main = () => {
                     <Footer />
                 </>
             )}
-            {flagIsContact && (
+            {currentPage === "CONTACT" && (
                 <>
                     <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
-
                     <ContactUs />
                     <Footer />
                 </>

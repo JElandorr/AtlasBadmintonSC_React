@@ -177,6 +177,9 @@ nav .mobile-only{
 
     .nav-links ul li{
         display: block;
+    }
+
+    .nav-links ul li a{
         color: #332c2c;
     }
 
@@ -216,6 +219,11 @@ nav .mobile-only{
         text-align: left;
         color: #332c2c;
     }
+
+    /* nav .mobile-menu-btn{
+        margin-left: 250px;
+        position: fixed;
+    } */
 
     nav .fa-bars{
         text-align: right;
