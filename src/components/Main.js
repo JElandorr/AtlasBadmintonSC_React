@@ -72,7 +72,6 @@ const Main = () => {
             {currentPage === "ABOUT" && (
                 <>
                     <SubHeader subpageHandler={subpageHandler} subPageData={subPageData} />
-
                     <About />
                     <Footer />
                 </>
