@@ -48,7 +48,7 @@ const SubHeader = ({ subpageHandler, subPageData }) => {
                     className={ComponentsCSS["nav-links"]}
                     style={{
                         right: menuOpen ? "0" : "-250",
-                        display: menuOpen ? "block" : "none",
+                        // display: menuOpen ? "block" : "none",
                     }}
                     onClick={mobileMenuHandler}
                 >
